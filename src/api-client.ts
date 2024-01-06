@@ -6,10 +6,13 @@ class apiClient {
 
   constructor() {
     this.defaultConfig = axios.create({
-      baseURL: "",
+      baseURL: "https://api.openweathermap.org",
       timeout: 5000,
       headers: {
         "Content-Type": "application/json",
+      },
+      params: {
+        appid: import.meta.env.VITE_OPENWEATHER_API_KEY,
       },
     });
 
